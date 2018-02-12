@@ -10,7 +10,7 @@
 * Redhat:
 `yum install nginx-extras lua-cjson`
 * Add "access_by_lua_block" code to your "location" block
-* Change "api_key" to your API key (Got one at https://cleantalk.org/my/)
+* Change "api_key" to your API key (Get it here: https://cleantalk.org/register?platform=api)
 * Do `service nginx reload` for apply changes
 
 ## How its works?
