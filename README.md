@@ -9,8 +9,10 @@
 `apt install nginx-extras lua-cjson`
 * Redhat:
 `yum install nginx-extras lua-cjson`
-* Add "access_by_lua_block" code to your "location" block
-* Change "api_key" to your API key (Get it here: https://cleantalk.org/register?platform=api)
+* Add this to "location" that you want to protect:
+`set $apikey '123456789';
+access_by_lua_file /etc/nginx/scripts/cleantalk.lua`
+* Set $apikey to your key (Get it here: https://cleantalk.org/register?platform=api)
 * Do `service nginx reload` for apply changes
 
 ## How its works?
