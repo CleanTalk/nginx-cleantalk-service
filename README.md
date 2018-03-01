@@ -13,6 +13,7 @@
 `set $apikey '123456789';`  
 `access_by_lua_file /etc/nginx/scripts/cleantalk.lua`
 * Set $apikey to your key (Get it here: https://cleantalk.org/register?platform=api)
+* Add "cleantalk-api-cache" to enabled sites (Cache requests to our API for reduce answer time)
 * Do `service nginx reload` for apply changes
 
 ## How its works?
