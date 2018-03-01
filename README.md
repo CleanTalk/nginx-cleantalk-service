@@ -7,8 +7,6 @@
 ## Install:
 * Debian/Ubuntu:  
 `apt install nginx-extras lua-cjson`
-* Redhat:  
-`yum install nginx-extras lua-cjson`
 * Add `nginx/conf.d/cache.conf` to `/etc/nginx/conf.d/` and set cache params as you want.
 * Add `include /etc/nginx/snippets/cleantalk-api.conf;` before protected location (Its API cache location)
 * Add this to "location" that you want to protect:  
