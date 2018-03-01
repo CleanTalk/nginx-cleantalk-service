@@ -1,5 +1,5 @@
 if ngx.var.request_method == "POST" then
-	local cjson = require("cjson.safe")			-- JSon library ("Safe" because its return "nil" instead of error)
+	local cjson = require("cjson.safe")		-- JSon library ("Safe" because its return "nil" instead of error)
 	ngx.req.read_body()							-- Read post data (body)
 	local args, err = ngx.req.get_post_args()	-- Get POST vars
 	if not args then
@@ -9,7 +9,7 @@ if ngx.var.request_method == "POST" then
 	end
 
 	local client_email = ""
-	local client_ip = ngx.var.remote_addr	-- Remote_addr by default. Not work if use Proxy or Nat
+	local client_ip = ngx.var.remote_addr		-- Remote_addr by default. Not work if use Proxy or Nat
 	
 	local regex = "^[%w_.]+@%w+%.%w+$"		-- Email match
 	for key, val in pairs(args) do
@@ -92,6 +92,7 @@ if ngx.var.request_method == "POST" then
 		end
 	else
 		ngx.say("Error: Service not respond. Status: " .. res.status)
+		--ngx.say(res.body)	-- Uncomment for debug
 		ngx.exit(ngx.OK)
 	end
 end
