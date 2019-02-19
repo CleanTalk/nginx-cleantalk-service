@@ -10,7 +10,7 @@ if ngx.var.request_method == "POST" then
 
 	local client_email = ""
 	local client_ip = ngx.var.remote_addr		-- Remote_addr by default. Not work if use Proxy or Nat
-	
+
 	local regex = "^[%w_.]+@%w+%.%w+$"		-- Email match
 	for key, val in pairs(args) do
 		if type(val) ~= "table" then
@@ -18,7 +18,7 @@ if ngx.var.request_method == "POST" then
 			if m then client_email = m end
 		end
 	end
-	
+
 	local regex = "^%d+.%d+.%d+.%d+$"		-- IP match
 	for key, val in pairs(args) do
 		if type(val) ~= "table" then
@@ -53,10 +53,10 @@ if ngx.var.request_method == "POST" then
 			ngx.say("Error: No answer from server")
 			ngx.exit(ngx.OK)
 		end
-		
+
 		local good_email = false
 		local good_ip = false
-		
+
 		if (data ~= nul and data[1] ~= nil) then
 			if (data[1]["data"] ~= nil) then
 
