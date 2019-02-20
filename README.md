@@ -1,4 +1,4 @@
-# Nginx lua-based anti-spam module example
+# Nginx lua-based module to filter spam POST requests to protect your website from spam bots by the blacklist.
 
 ### Dependencies:
 * nginx-extras
