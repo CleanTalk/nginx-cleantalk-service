@@ -11,7 +11,7 @@ if ngx.var.request_method == "POST" then
 	local client_email = ""
 	local client_ip = ngx.var.remote_addr		-- Remote_addr by default. Not work if use Proxy or Nat
 
-	local regex = "^[%w_.]+@%w+%.%w+$"		-- Email match
+	local regex = "[A-Za-z0-9%.%%%+%-]+@[A-Za-z0-9%.%%%+%-]+%.%w%w%w?%w?"     -- Email match
 	for key, val in pairs(args) do
 		if type(val) ~= "table" then
 			local m, err = string.match(val, regex)
